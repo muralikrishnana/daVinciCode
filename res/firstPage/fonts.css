@@ -7,3 +7,8 @@
     font-family: "text";
     src: url("fonts/chicago.ttf");
 }
+
+@font-face {
+    font-family: "baseFont";
+    src: url("fonts/inconsolata.ttf");
+}
