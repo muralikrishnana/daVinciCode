@@ -7,23 +7,28 @@
     <title>Desert - Scenary</title>
 
     <!-- css -->
+    <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="desertScenary.css">
 
     <!-- js -->
+    <script src="snowstorm.js"></script>
     <script src="desertScenary.js"></script>
 </head>
 <body>
     <div id="container">
+        <div id="clueContainer">
+            <div class="banner">
+                <img src="img/dLogo.png">
+            </div>
+        </div>
         <div id="textContainer"></div>
-        <img src="img/bg" id="bg">
-        <!-- <img src="img/fg" id="fg"> -->
-        <img src="img/camel.gif" id="camel">
-        <img src="img/camel1" id="camel1">
+        <img src="img/bg.png" id="bg">
+        <img src="img/fg.png" id="fg">
         <div class="flag rect" id="flag">
-                <div class="flag-pattern">
-                    <img src="img/dLogo.png" alt="" id="flagLogo">
-                </div>
-                <div class="flag-wave"></div>
+            <div id="flagCloth" class="flag-pattern">
+                <img src="img/dLogo.png" id="flagLogo">
+            </div>
+            <div class="flag-wave"></div>
         </div>
     </div>
 </body>
