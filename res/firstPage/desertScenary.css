@@ -95,10 +95,6 @@ html, body{
   z-index: 10;
 }
 
-.fade {
-  animation: ;
-}
-
 @keyframes textFade{
   0% {
     opacity: 0;
