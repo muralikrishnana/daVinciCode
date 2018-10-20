@@ -11,9 +11,7 @@ let init = () => {
     document.addEventListener("keydown", handleKeyPress);
     document.addEventListener("click", handleClick);
 
-    for (img of document.getElementsByTagName("img")) {
-        img.ondragstart = _ => false
-    }
+    document.ondragstart = _ => false
 }
 
 let releaseCamel = (camel, initialLeft, frameRate) => {
