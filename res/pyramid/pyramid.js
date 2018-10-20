@@ -11,7 +11,7 @@ let init = () => {
     document.addEventListener("keydown", handleKeyPress);
     document.addEventListener("click", handleClick);
 
-    document.ondragstart = _ => false
+    document.ondragstart = _ => false;
 }
 
 let releaseCamel = (camel, initialLeft, frameRate) => {
