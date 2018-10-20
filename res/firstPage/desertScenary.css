@@ -1,3 +1,10 @@
+:root {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 * {
     margin: 0;
     padding: 0;

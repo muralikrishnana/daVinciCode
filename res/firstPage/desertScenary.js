@@ -24,6 +24,7 @@ let init = _ => {
 
     // start text roll
     setTimeout(textRoll, 2000);
+    document.ondragstart = _ => false;
 }
 
 let startMotion = () => {
