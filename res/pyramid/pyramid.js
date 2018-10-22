@@ -4,8 +4,9 @@ let i = 0;
 let gameMatrix = [];
 let presentFocus = {};
 
+
 let init = () => {
-    startAudio();
+    document.addEventListener("click", startAudio);
     setUpGameDiv();
     loadCamels();
     document.addEventListener("keydown", handleKeyPress);
@@ -126,6 +127,8 @@ let handleKeyPress = (e) => {
 }
 
 let startAudio = (src = 0) => {
+    document.removeEventListener("click", startAudio);
+
     let playList = [
         "aud/bg.mp3"
     ], i = 0;
