@@ -1,11 +1,14 @@
-/* -----------------------------------------------
-/* Author : Vincent Garreau  - vincentgarreau.com
-/* MIT license: http://opensource.org/licenses/MIT
-/* Demo / Generator : vincentgarreau.com/particles.js
-/* GitHub : github.com/VincentGarreau/particles.js
-/* How to use? : Check the GitHub README
-/* v2.0.0
-/* ----------------------------------------------- */
+
+
+/* important! for alignment, you should make things
+ * relative to the canvas' current width/height.
+ */
+function draw() {
+  var ctx = (canvas.getContext);
+  ctx.canvas.width  = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
+  //...drawing code...
+}
 
 var pJS = function(tag_id, params){
 
@@ -20,20 +23,20 @@ var pJS = function(tag_id, params){
     },
     particles: {
       number: {
-        value: 600,
+        value: 400,
         density: {
           enable: true,
           value_area: 800
         }
       },
       color: {
-        value: '#111111'
+        value: '#fff'
       },
       shape: {
         type: 'circle',
         stroke: {
           width: 0,
-          color: '#111111'
+          color: '#ff0000'
         },
         polygon: {
           nb_sides: 5
@@ -45,40 +48,40 @@ var pJS = function(tag_id, params){
         }
       },
       opacity: {
-        value: 1,
+        value: 3,
         random: false,
         anim: {
-          enable: false,
-          speed: 3,
-          opacity_min: 0,
+          enable: true,
+          speed: 2,
+          opacity_min: 1,
           sync: false
         }
       },
       size: {
-        value: 20,
-        random: true,
+        value: 25,
+        random: false,
         anim: {
-          enable: false,
+          enable: true,
           speed: 20,
-          size_min: 0,
+          size_min: 17,
           sync: false
         }
       },
       line_linked: {
         enable: true,
-        distance: 75,
-        color: '#111111',
+        distance: 100,
+        color: '#fff',
         opacity: 1,
         width: 1
       },
       move: {
         enable: true,
-        speed: 4,
+        speed: 3,
         direction: 'none',
         random: true,
         straight: false,
         out_mode: 'out',
-        bounce: true,
+        bounce: false,
         attract: {
           enable: false,
           rotateX: 3000,
@@ -95,7 +98,7 @@ var pJS = function(tag_id, params){
           mode: 'grab'
         },
         onclick: {
-          enable: true,
+          enable: false,
           mode: 'push'
         },
         resize: true
@@ -117,7 +120,7 @@ var pJS = function(tag_id, params){
           duration: 0.4
         },
         push:{
-          particles_nb: 4
+          particles_nb: 1
         },
         remove:{
           particles_nb: 2
