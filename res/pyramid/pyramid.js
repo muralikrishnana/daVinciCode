@@ -1,4 +1,4 @@
-let code = "ULDLLUUURUU";
+let code = "ULULURUULLUURRURU";
 let input = "";
 let i = 0;
 let gameMatrix = [];
