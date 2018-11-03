@@ -204,7 +204,7 @@ body {
     display: flex;
     justify-content: center;
     background-image: url(img/pyramid.jpg);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
 }
 

@@ -15,7 +15,6 @@ const bgRateBk = 1;
 const fgRateBk = 2;
 
 let init = _ => {
-    document.addEventListener("click", handleClick);
     // start motion
     setTimeout(startMotion, 2000);
 
@@ -61,6 +60,7 @@ let startAudio = (src = 0) => {
 }
 
 let textRollEnd = () => {
+    document.addEventListener("click", handleClick);
     let textContainer = document.getElementById("textContainer");
     textContainer.style.animation = "";
     clearTimeout(textTimer);
@@ -124,7 +124,7 @@ let textRoll = () => {
         ["In a faraway land, amidst an arid desert..."],
         ["In a snowy night...", snowStorm.start],
         ["The winds whispered a legend to the travellers..."],
-        ["\"Listen to the whispers... Follow the trail...You may find what you seek, Perhaps even more...\""],
+        ["\"Listen to the whispers... Follow the trail... \""],
         ["\"You may find what you seek, Perhaps even more...\""],
         ["Many tried..."],
         ["Yet they all failed..."],
@@ -185,8 +185,18 @@ let moveObj = (obj, rate, target, ingameCharacter = false) => {
     else if(target == "flag") flagTimer = timer;
 }
 
+let begin = () => {
+    let button = document.getElementById("proceedButton");
+    let introDiv = document.getElementById("c-body");
+
+    button.onclick = () => {
+        introDiv.style.display = "none";
+        init();
+    }
+}
+
 if( document.readyState === 'complete' ) {
-    init();
+    begin();
 } else {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', begin);
 }
