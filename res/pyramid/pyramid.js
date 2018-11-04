@@ -194,4 +194,14 @@ let checkRoute = (keyCode) => {
     }
 } 
 
-document.addEventListener("DOMContentLoaded", init);
+let begin = () => {
+    let button = document.getElementById("proceedButton");
+    let introDiv = document.getElementById("c-body");
+
+    button.onclick = () => {
+        introDiv.style.display = "none";
+        init();
+    }
+}
+
+document.addEventListener("DOMContentLoaded", begin);
