@@ -1,0 +1,28 @@
+body {
+  margin: 40px;
+  background-image: url("images/rrk1.jpg");
+}
+
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 150%;
+}
+
+.box:nth-child(even) {
+  background-color: #ccc;
+  color: #000;
+}
+
+.wrapper {
+ 
+  transform: translate(0,0);
+  width: 1500px;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(10, 150px);
+  grid-template-rows: repeat(10,100px);
+  grid-auto-flow: column;
+}
