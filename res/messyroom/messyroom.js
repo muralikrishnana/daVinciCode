@@ -1,6 +1,6 @@
 var winH = 0, winW = 0, viewSpan, pers = 700, backwall, scratch = true;
 
-window.onload = () => {
+let init = () => {
   winH = window.innerHeight;
   winW = window.innerWidth;
   viewSpan = document.getElementById("viewSpan");
@@ -10,10 +10,22 @@ window.onload = () => {
   initNewspaper();
 };
 
+let begin = () => {
+  init();
+  let button = document.getElementById("proceedButton");
+  let introDiv = document.getElementById("c-body");
+
+  button.onclick = () => {
+      introDiv.classList.add("hidden");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", begin);
+
 let setupMirror = () => {
   let mirror = document.getElementById("mirror");
   mirror.addEventListener("click", () => {
-    console.log("Off to next level");
+    displaySuccessMessage();
   });
 }
 
@@ -90,4 +102,15 @@ let setDate = (secondsHand, minutesHand, hoursHand) => {
   const hours = now.getHours();
   const hoursDeg = ((hours / 12) * 360) + 90;
   hoursHand.style.transform = `translateY(-5px) rotate(${hoursDeg}deg)`;
+}
+
+let displaySuccessMessage = () => {
+  let introDiv = document.getElementById("c-body");
+  let successCode = '<h2 class="c-scroll__heading">Look around!!!</h2><br><p class="c-scroll__paragraph">Dyuksha\'s On...</p> '
+  + '<br><p class="c-scroll__paragraph" style="font-family:\'baseFont\';">Please wait while next level is being prepared... Do not reload the page...</p>';
+  introDiv.getElementsByClassName("c-scroll__text")[0].innerHTML = successCode;
+
+  introDiv.classList.remove("hidden");
+
+  // redirect to next page
 }

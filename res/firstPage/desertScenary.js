@@ -190,7 +190,7 @@ let begin = () => {
     let introDiv = document.getElementById("c-body");
 
     button.onclick = () => {
-        introDiv.style.display = "none";
+        introDiv.classList.add("hidden");
         init();
     }
 }
@@ -203,7 +203,7 @@ let showCryptex = () => {
     body.style.overflowX = "hidden"; 
     html.style.overflowX = "hidden"; 
     cryptex.classList.remove("hidden");
-    document.getElementById("goBack").onclick = () => {
+    document.getElementById("goBackButton").onclick = () => {
         cryptex.classList.add("hidden");
         body.style.overflowY = "hidden"; 
         body.style.overflowX = ""; 

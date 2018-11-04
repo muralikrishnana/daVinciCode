@@ -447,8 +447,15 @@ function successfullyDecoded() {
 }
 
 function displaySuccessMessage() {
-  addClassName(codeElement, 'solved');
-  codeElement.innerHTML = "Congratulations, you have solved the code!";
+  let introDiv = document.getElementById("c-body");
+  let successCode = '<h2 class="c-scroll__heading">Consgrats!!!</h2><p class="c-scroll__paragraph">Come let\'s decode the da Vinci Code</p> '
+  + '<br><p class="c-scroll__paragraph" style="font-family:\'baseFont\';">Please wait while next level is being prepared... Do not reload the page...</p>';
+  introDiv.getElementsByClassName("c-scroll__text")[0].innerHTML = successCode;
+
+  introDiv.classList.remove("hidden");
+  document.getElementById("cryptex_container").classList.add("hidden");
+
+  // redirect to next page
 }
 
 
@@ -472,7 +479,6 @@ function updateRingRotation(ringNum) {
   rotateElement(ringElements[ringSelected], targetRotation);
 }
 
-// https://stackoverflow.com/questions/19618745/css3-rotate-transition-doesnt-take-shortest-way
 function rotateElement(element, nR) {
   var aR;
   var rot = rot || 0; // if rot undefined or 0, make 0, else rot
@@ -620,14 +626,14 @@ function highlightAllRings() {
 // --------------------------------------
 
 function addMouseEventListeners() {
-  window.addEventListener('mousemove', stage_mouseMoveHandler);
+  // window.addEventListener('mousemove', stage_mouseMoveHandler);
   window.addEventListener('mousedown', stage_mouseDownHandler);
   window.addEventListener('mouseup', stage_mouseUpHandler);
-  mouseWheelEvents();
+  // mouseWheelEvents();
 }
 
 function removeMouseEventListeners() {
-  window.removeEventListener('mousemove', stage_mouseMoveHandler);
+  // window.removeEventListener('mousemove', stage_mouseMoveHandler);
   window.removeEventListener('mousedown', stage_mouseDownHandler);
   window.removeEventListener('mouseup', stage_mouseUpHandler);
 }
@@ -729,26 +735,6 @@ function stepRotation(objRotation) {
 
   return targetRotation;
 }
-
-
-// --------------------------------------
-// Hints
-// --------------------------------------
-
-// private function displayHints():void {
-//   hintMessages = new CryptexHints();
-//   hintMessages.x = (sw - hintMessages.width) / 2 + 25;
-//   hintMessages.y = sh / 2 - 125;
-//   addChild(hintMessages);
-// }
-
-
-// --------------------------------------
-// Class Functions
-// --------------------------------------
-
-// Class functions from Webkit
-// https://webkit.org/blog-files/3d-transforms/morphing-cubes.html
 
 function hasClassName(inElement, inClassName) {
   var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');

@@ -184,7 +184,7 @@ let checkRoute = (keyCode) => {
             }
             if (input === code) {
                 document.removeEventListener("keydown", handleKeyPress);
-                console.log("password correct");
+                displaySuccessMessage();
             };
         }
     }
@@ -194,12 +194,23 @@ let checkRoute = (keyCode) => {
     }
 } 
 
+let displaySuccessMessage = () => {
+    let introDiv = document.getElementById("c-body");
+    let successCode = '<h2 class="c-scroll__heading">WoW!!!</h2><p class="c-scroll__paragraph">You\'re getting nearer...</p> '
+    + '<br><p class="c-scroll__paragraph" style="font-family:\'baseFont\';">Please wait while next level is being prepared... Do not reload the page...</p>';
+    introDiv.getElementsByClassName("c-scroll__text")[0].innerHTML = successCode;
+  
+    introDiv.classList.remove("hidden");
+  
+    // redirect to next page
+  }
+
 let begin = () => {
     let button = document.getElementById("proceedButton");
     let introDiv = document.getElementById("c-body");
 
     button.onclick = () => {
-        introDiv.style.display = "none";
+        introDiv.classList.add("hidden");
         init();
     }
 }
