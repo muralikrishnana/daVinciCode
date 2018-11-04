@@ -136,6 +136,9 @@ function initialize() {
   addMouseEventListeners();
   cryptexInitialSetting();
   // displayHints();
+
+  let unlockButton = document.getElementById("unlock");
+  unlockButton.onclick = testCode;
 }
 
 // --------------------------------------
@@ -289,7 +292,6 @@ function displayCodeArray() {
   }
   // test whether the code has been solved
   code = codeElement.innerText;
-  testCode();
 }
 
 function addKeyPressListeners() {

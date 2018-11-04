@@ -29,6 +29,8 @@
 
 #goBack {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   bottom: 10px;
   font-family: "baseFont";
 }
