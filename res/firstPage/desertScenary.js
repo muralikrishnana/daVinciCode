@@ -71,7 +71,7 @@ let textRollEnd = () => {
         let button = document.createElement("button");
         button.innerText = "Proceed To da Vinci Code";
         button.addEventListener("click", () => {
-            console.log("off to cryptex");
+            showCryptex();
         });
         textContainer.appendChild(button);
 
@@ -157,7 +157,7 @@ let handleClick = (e) => {
     let banner = clueContainer.getElementsByClassName("banner");
     if (e.target !== banner && clueContainer.style.visibility === "visible")
         clueContainer.style.visibility  = "hidden";
-    let flagCloth = document.getElementById("flagCloth"),
+        let flagCloth = document.getElementById("flagCloth"),
         flagRect = flagCloth.getBoundingClientRect(),
         clickX = e.clientX,
         clickY = e.clientY,
@@ -192,6 +192,21 @@ let begin = () => {
     button.onclick = () => {
         introDiv.style.display = "none";
         init();
+    }
+}
+
+let showCryptex = () => {
+    let cryptex = document.getElementById("cryptex_container");
+    let body = document.getElementsByTagName("body")[0];
+    let html = document.getElementsByTagName("html")[0];
+    body.style.overflowY = "";
+    body.style.overflowX = "hidden"; 
+    html.style.overflowX = "hidden"; 
+    cryptex.classList.remove("hidden");
+    document.getElementById("goBack").onclick = () => {
+        cryptex.classList.add("hidden");
+        body.style.overflowY = "hidden"; 
+        body.style.overflowX = ""; 
     }
 }
 
