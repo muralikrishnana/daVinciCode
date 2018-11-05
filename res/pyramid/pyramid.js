@@ -154,7 +154,6 @@ let checkRoute = (keyCode) => {
         case 40: key = "D"; break;
         default: key = "I";
     }
-    // console.log(key)
 
     if (key === "I") {
         removeGameFocus(presentFocus.i, presentFocus.j);
