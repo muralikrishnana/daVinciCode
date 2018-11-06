@@ -2,6 +2,8 @@ let cSuns = [];
 let nc = false;
 
 let begin = () => {
+    document.ondragstart = _ => false;
+
     let button = document.getElementById("proceedButton");
     let introDiv = document.getElementById("c-body");
 
@@ -47,7 +49,23 @@ let handleClick = (e) => {
     let cpl = document.getElementById("cpl"); 
     let cpr = document.getElementById("cpr");
 
-    if(note.contains(e.target)){
+    let noteRect = note.getBoundingClientRect();
+
+    let notePos = {
+        x1: noteRect.x,
+        x2: noteRect.x + noteRect.width,
+        y1: noteRect.y,
+        y2: noteRect.y + noteRect.height,
+    }
+
+    let inNote = false;
+
+    if (e.clientX > notePos.x1
+        && e.clientX < notePos.x2
+        && e.clientY > notePos.y1
+        && e.clientY < notePos.y2) inNote = true;
+
+    if(inNote){
         note.classList.toggle("shrink");
         note.style.zIndex = 1;
         nc = true;

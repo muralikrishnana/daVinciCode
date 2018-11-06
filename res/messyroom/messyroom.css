@@ -14,6 +14,10 @@
   --channel4: url("img/c3.webp");
   --channel5: url("img/c4.webp");
   --channel6: url("img/c5.webp");
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 button {

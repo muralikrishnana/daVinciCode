@@ -136,7 +136,7 @@ let textRoll = () => {
         ["", textRollEnd],
     ], i = 0;
     let textContainer = document.getElementById("textContainer");
-    let fadeCycle = 10;
+    let fadeCycle = 8;
 
     textContainer.style.animation = `textFade ${fadeCycle}s infinite`;
 

@@ -1,6 +1,7 @@
 var winH = 0, winW = 0, viewSpan, pers = 700, backwall, scratch = true;
 
 let init = () => {
+  document.ondragstart = _ => false;
   winH = window.innerHeight;
   winW = window.innerWidth;
   viewSpan = document.getElementById("viewSpan");
