@@ -114,4 +114,5 @@ let displaySuccessMessage = () => {
   introDiv.classList.remove("hidden");
 
   // redirect to next page
+  redirect();
 }

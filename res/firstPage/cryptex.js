@@ -456,6 +456,13 @@ function displaySuccessMessage() {
   document.getElementById("cryptex_container").classList.add("hidden");
 
   // redirect to next page
+  redirect();
+}
+
+let redirect = () => {
+  setTimeout(() => {
+    window.location.href = "../pyramid/pyramid.html";
+  }, 1000);
 }
 
 

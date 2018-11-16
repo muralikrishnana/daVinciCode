@@ -202,6 +202,14 @@ let displaySuccessMessage = () => {
     introDiv.classList.remove("hidden");
   
     // redirect to next page
+    redirect();
+  }
+
+
+let redirect = () => {
+    setTimeout(() => {
+      window.location.href = "../messyroom/messyroom.html";
+    }, 1000);
   }
 
 let begin = () => {
